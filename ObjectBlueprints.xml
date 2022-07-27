@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects>
+  <object Name="Books_YouButFleshy" Inherits="Widget">
+    <part Name="Render" DisplayName="{{M|You, but {{rusty|fleshy}}}}" />
+    <stat Name="Level" Value="1" />
+    <part Name="Books_FleshyPet" />
+    <tag Name="Pet"/>
+    <tag Name="StartingPet"/>
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+  </object>
+</objects>
