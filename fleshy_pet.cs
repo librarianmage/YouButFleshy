@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using XRL.Core;
+using XRL.World.Parts.Mutation;
 
 namespace XRL.World.Parts
 {
@@ -50,9 +52,10 @@ namespace XRL.World.Parts
             /* Mechanize player */
 
             Mutations playerMutations = gamePlayer.Body.GetPart<Mutations>();
-            playerMutations.MutationList.ForEach((mutation) => playerMutations.RemoveMutation(mutation));
+            var playerMutationList = new List<BaseMutation>(playerMutations.MutationList);
+            playerMutationList.ForEach((mutation) => playerMutations.RemoveMutation(mutation));
 
-            gamePlayer.Body.SafeForeachInventoryEquipmentAndCybernetics((C) => C.Destroy(Silent: true));
+            gamePlayer.Body.SafeForeachInventoryEquipmentAndCybernetics((C) => C.Obliterate(Silent: true));
 
             Roboticized.Roboticize(thePlayer);
 
